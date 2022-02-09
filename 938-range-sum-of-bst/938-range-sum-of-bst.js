@@ -13,23 +13,21 @@
  * @return {number}
  */
 var rangeSumBST = function(root, low, high) {
-    let result = 0
-    result = depthFirstSearch(root, low, high, result)
-    return result
+    let result = []
+    depthFirstSearch(root, low, high, result)
+    return result.reduce(((a,b) => a+b),0)
 };
 
 const depthFirstSearch = (tree, low, high, result) => {
     if(tree !== null){
         if(tree.val >= low && tree.val <= high){
-        result += tree.val
-            console.log('result', result)
+        result.push(tree.val)
         }
         if(tree.val > low ){
-            result = depthFirstSearch(tree.left, low, high, result)
+            depthFirstSearch(tree.left, low, high, result)
         }
         if(tree.val < high){
-            result = depthFirstSearch(tree.right, low, high, result)
+            depthFirstSearch(tree.right, low, high, result)
         }
     }
-    return result
 }
