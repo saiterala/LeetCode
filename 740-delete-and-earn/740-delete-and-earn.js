@@ -1,32 +1,42 @@
-/*
-TOPIC:manually delete will earn points, but passively delete nums[i]-1 and nums[i]+1(won't earn anything) so similar to house robbery(NOT STEAL ADJACENT HOUSE[i-1] or [i-2]+cur)
-STEP:
-1.use map store {n: accumlateN}
-2.use dp store 1D array size is maxofn +1, dp[i] will store maxiumum number of points so far
-*/
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var deleteAndEarn = function(nums) {
-    if (nums == null || nums.length == 0) return 0;
-    //create map store n:accumlateN
-    const accuN = new Array(Math.max(...nums) + 1).fill(0);
-    for (const n of nums){
-        accuN[n] += n;
-    }
-    //create dp dp[i] mean maximum profit
-    const dp = new Array(Math.max(...nums) + 1).fill(0);
-    let profit = 0;
-    dp[0] = accuN[0];
-    dp[1] = Math.max(dp[0], accuN[1]);
-    dp[2] = Math.max(dp[1], accuN[2]);
+    let maxNumber = -Infinity
+    let points = {}
     
-    if (accuN.length <= 2) {
-        return dp[1];    
+    for ( const num of nums){
+        points[num] = (points[num] || 0) + num
+        maxNumber = Math.max(num, maxNumber )
     }
-    else if (accuN.length <= 3) return dp[2];
-    else{
-        for(let i = 3; i < dp.length; i++){
-            dp[i] = Math.max(dp[i-1], dp[i-2]+accuN[i]);
-            profit = Math.max(dp[i], profit) //must have it since no always skip one, should based on value max
+    let n = Object.keys(points).length
+    let twoBack = 0
+    let oneBack = 0
+  
+    
+    if(maxNumber < n + n * (Math.log(n)/Math.log(2))){
+        
+        oneBack = points[1] || 0
+        for(let i = 2; i <= maxNumber; i++){
+            let temp = oneBack
+            oneBack = Math.max(oneBack, twoBack + (points[i] || 0) )
+            twoBack = temp
+        }
+    }else {
+        let elements = Object.keys(points).sort()
+        oneBack = points[elements[0]]
+        for ( let i=1; i < elements.length ; i++){
+            let curr = elements[i]
+            let temp = oneBack
+            if(curr === elements[i-1] + 1){
+                oneBack = Math.max(oneBack, twoBack + points[curr])
+            }else{
+                oneBack += points[curr]
+            }
+            twoBack = oneBack
         }
     }
-    return profit;
+    
+    return oneBack
 };
