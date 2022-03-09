@@ -37,3 +37,17 @@ var deleteDuplicates = function(head) {
     
     return newHead.next
 };
+
+
+//Recursive Method
+// var deleteDuplicates = function(head) {
+//     function dfs(node, previous = null) {
+//         if (!node) return null;
+//         if (node.val === previous?.val || node.val === node.next?.val) {
+//             return dfs(node.next, node);
+//         }
+//         node.next = dfs(node.next, node)
+//         return node;
+//     }
+//     return dfs(head);
+// };
