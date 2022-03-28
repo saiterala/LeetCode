@@ -11,8 +11,7 @@ var search = function(nums, target) {
         if(target === nums[left] || target === nums[right]) return true
         let middle = Math.floor((left + right) / 2)
         if(target === nums[middle]) return true
-        // if(nums[left] === nums[middle]) left++
-        // else if(nums[middle] === nums[right]) right--
+        
         if(nums[left] === nums[middle] && nums[middle] === nums[right]){
             left++
             right--
