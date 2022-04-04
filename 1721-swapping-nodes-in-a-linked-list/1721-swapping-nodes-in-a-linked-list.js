@@ -31,7 +31,6 @@ var swapNodes = function(head, k) {
             second = start
             start = start.next
             end = end.next
-            count++
         }
     }
     
