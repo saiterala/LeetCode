@@ -3,15 +3,15 @@
  * @return {number}
  */
 var minOperations = function(logs) {
-    let stack = []
+    let dirLength = 0
     
     for(const dir of logs){
         if(dir === '../'){
-            stack.length > 0 && stack.pop()
+           dirLength > 0 && dirLength--
         }else if( dir === './') continue
         else {
-            stack.push(dir)
+            dirLength++
         }
     }
-    return stack.length
+    return dirLength
 };
