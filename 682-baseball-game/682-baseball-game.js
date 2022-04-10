@@ -15,7 +15,6 @@ var calPoints = function(ops) {
         }else if(str === 'C') resultStack.pop()
         else resultStack.push(x)
     }
-    console.log(resultStack)
     return resultStack.reduce((a,b) => a + b)
     
 };
