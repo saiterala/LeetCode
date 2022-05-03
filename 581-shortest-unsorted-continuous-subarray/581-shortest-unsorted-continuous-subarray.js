@@ -15,7 +15,6 @@ var findUnsortedSubarray = function(nums) {
     let left = 0
     let right = nums.length - 1
     
-    console.log(minVal, maxVal)
     if(minVal === Infinity) return 0
     
     while(minVal >= nums[left]){
