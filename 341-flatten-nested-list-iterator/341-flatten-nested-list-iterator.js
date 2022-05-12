@@ -33,7 +33,6 @@ var NestedIterator = function(nestedList, arr=[]) {
     flattened(nestedList,result )
     this.flattenedArr = result
     this.iterator = 0
-     console.log(this.flattenedArr)
 };
 
 const flattened = function(nestedList, result) {
