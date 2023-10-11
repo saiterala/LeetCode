@@ -25,11 +25,8 @@ var myAtoi = function(s) {
         } else break;
     }
     
-    console.log(res)
     if(!res.length) return 0
-    let val = parseInt(res.join("")) 
-    val = val * multiplier
-    console.log(val)
+    let val = parseInt(res.join("")) * multiplier
     if( val > (Math.pow(2, 31) - 1)) return Math.pow(2, 31) -1
     if( val < -Math.pow(2, 31)) return -Math.pow(2, 31)
     return val
