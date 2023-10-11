@@ -8,7 +8,6 @@ var firstUniqChar = function(s) {
     for (const char of s){
         map[char] = map[char] ? map[char] + 1 : 1
     }
-    console.log(map)
     
     for(let i=0; i < s.length ; i++ ){
         if(map[s[i]] === 1){
