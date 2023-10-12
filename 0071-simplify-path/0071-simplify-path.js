@@ -8,7 +8,6 @@ var simplifyPath = function(path) {
     const stack= [""]
     
     for(const token of tokens){
-        console.log(stack)
         if(token === ".."){
             if(stack.length && stack[stack.length - 1] !== "") {
                 stack.pop()
@@ -18,7 +17,6 @@ var simplifyPath = function(path) {
         }
     }
     
-    console.log("stack", stack)
     if(stack.length === 1 ) return "/"
     
     return stack.join("/")
