@@ -22,8 +22,7 @@ var longestPalindrome = function(words) {
             map.set(word, (map.get(word) || 0) + 1)
         }
     }
-    console.log(count)
-    console.log(cmap)
+  
     let central = false
     Object.values(cmap).forEach( val => {
         if(val >= 2){
