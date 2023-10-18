@@ -16,7 +16,7 @@ var matrixReshape = function(mat, r, c) {
     }
     
     const res = Array(r).fill(0).map(_ => Array(c).fill(0))
-    console.log(res)
+   
     let rCount = 0
     let cCount = 0
     
@@ -32,6 +32,5 @@ var matrixReshape = function(mat, r, c) {
         }
     }
     
-    console.log(res)
     return res
 };
