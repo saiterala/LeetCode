@@ -34,7 +34,6 @@ var zigzagTraverse = function(v1, v2, maxLength){
  * @returns {boolean}
  */
 ZigzagIterator.prototype.hasNext = function hasNext() {
-    // console.log("Hello")
     return this.iterator < this.totalLength
     
 };
@@ -45,7 +44,6 @@ ZigzagIterator.prototype.hasNext = function hasNext() {
  */
 
 ZigzagIterator.prototype.next = function next() {
-
     const val = this.arr[this.iterator]
     this.iterator++
     return val
