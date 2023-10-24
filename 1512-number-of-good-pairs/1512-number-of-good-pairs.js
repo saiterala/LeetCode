@@ -8,10 +8,10 @@ var numIdenticalPairs = function(nums) {
     
     for( let i =0; i < nums.length; i++){
         if(map[nums[i]]){
-            map[nums[i]].forEach(e => res++)
-            map[nums[i]] = [...map[nums[i]], i]
+            res += map[nums[i]]
+            map[nums[i]] = map[nums[i]] + 1
         }else {
-            map[nums[i]] = [i]
+            map[nums[i]] = 1
         }
     }
     return res
