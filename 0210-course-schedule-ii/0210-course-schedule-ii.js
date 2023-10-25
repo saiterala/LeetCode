@@ -17,9 +17,7 @@ var findOrder = function(numCourses, prerequisites) {
             map[pre]= [course]
         }
     }
-    
-    console.log(map)
-    console.log(inDegree)
+ 
     
     let res = []
     let queue = []
