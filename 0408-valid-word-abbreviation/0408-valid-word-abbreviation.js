@@ -14,7 +14,6 @@ var validWordAbbreviation = function(word, abbr) {
         const num = parseInt(abbr[j])
         if(!isNaN(num)){
             if(stack.length === 0 && num ===0){
-                console.log("f1")
                 return false
             }
             stack.push(num)
@@ -30,7 +29,6 @@ var validWordAbbreviation = function(word, abbr) {
             i +=forw
             stack = []
         }
-        console.log(stack)
     }
     if(stack.length){
         console.log("i", i)
