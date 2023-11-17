@@ -22,7 +22,6 @@ HitCounter.prototype.hit = function(timestamp) {
  * @return {number}
  */
 HitCounter.prototype.getHits = function(timestamp) {
-    console.log(this.hits)
     while(timestamp - this.hits[0]?.timestamp > 299){
         const item = this.hits.shift()
         this.total -= item.count
