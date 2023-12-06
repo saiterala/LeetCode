@@ -17,7 +17,6 @@ var nextPermutation = function(nums) {
         }
         swap(nums, i , j)
     }
-    console.log(nums)
     reverse(nums, i+1)
     return nums
 };
