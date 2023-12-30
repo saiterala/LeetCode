@@ -6,7 +6,6 @@ var Solution = function(nums) {
     for( let i = 0; i < nums.length; i++){
         const num = nums[i]
         if(num in this.map){
-            //this.map[num] = [...this.map[num], i]
             this.map[num].push(i)
         }else {
             this.map[num] = [i]
