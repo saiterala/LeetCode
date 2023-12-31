@@ -13,7 +13,6 @@ var arrayRankTransform = function(arr) {
             key++
         }
     })
-    console.log(map)
     const result = arr.map(el => map[el])
     return result
 };
