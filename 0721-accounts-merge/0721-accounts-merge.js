@@ -35,8 +35,7 @@ var accountsMerge = function(accounts) {
             adjacent[account[i]].push(firstEmail)
         }
     }
-    console.log(adjacent)
-    
+  
     const mergedAccount = []
     for(const account of accounts){
         const accName = account[0]
