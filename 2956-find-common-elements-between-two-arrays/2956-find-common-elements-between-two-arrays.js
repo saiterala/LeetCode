@@ -7,16 +7,17 @@ var findIntersectionValues = function(nums1, nums2) {
     const num1Map = {}
     const num2Map = {}
     
-    for(const num of nums1){
-        if(!num1Map[num]){
-            num1Map[num] = true
+    const updateMap = (nums, map) => {
+        for(const num of nums){
+            if(!map[num]){
+                map[num] = true
+            }
         }
     }
-    for(const num of nums2){
-        if(!num2Map[num]){
-            num2Map[num] = true
-        }
-    }
+    
+    updateMap(nums1, num1Map)
+    updateMap(nums2, num2Map)
+    
     let num1 = 0
     let num2 = 0
     
