@@ -11,4 +11,5 @@ var findSpecialInteger = function(arr) {
         map[char] = (map[char] || 0) + 1
         if(map[char] > max) return char
     }
+    return -1
 };
