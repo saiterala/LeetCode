@@ -12,7 +12,6 @@
 var isPalindrome = function(head) {
     const recursiveCheck = (node) => {
         if(node !== null){
-            console.log(node.val)
             if(!recursiveCheck(node.next)) return false
             if(node.val !== frontNode.val) return false
             frontNode = frontNode.next
