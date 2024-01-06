@@ -4,7 +4,6 @@
  */
 var isPalindrome = function(x) {
     const arr = x.toString().split("")
-    console.log(arr)
     let i =0
     let j = arr.length -1
     while(i < j){
