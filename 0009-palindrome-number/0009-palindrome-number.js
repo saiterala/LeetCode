@@ -3,14 +3,18 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-    const arr = x.toString().split("")
-    let i =0
-    let j = arr.length -1
-    while(i < j){
-        if(arr[i] === arr[j]){
-            i++
-            j--
-        }else return false
+    if( x < 0 || (x !== 0 && x % 10 === 0 )){
+        return false
     }
-    return true
+    
+    let rev = 0
+    
+    while(x > rev){
+        rev = rev * 10 + x % 10
+        x = Math.floor(x/10)
+    }
+    console.log(rev)
+    console.log(x)
+    
+    return  x === rev || x === Math.floor(rev/10)
 };
