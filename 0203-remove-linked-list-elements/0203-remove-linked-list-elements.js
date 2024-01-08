@@ -14,10 +14,11 @@ var removeElements = function(head, val) {
     let prev = new ListNode()
     let newHead = prev
     let current = head
+    prev.next = current
     
     while(current != null){
         if(current.val !== val){
-            prev.next = current
+            // prev.next = current
             prev = current
         }else{   
             prev.next = current.next
