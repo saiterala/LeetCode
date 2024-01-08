@@ -18,7 +18,6 @@ var removeElements = function(head, val) {
     
     while(current != null){
         if(current.val !== val){
-            // prev.next = current
             prev = current
         }else{   
             prev.next = current.next
