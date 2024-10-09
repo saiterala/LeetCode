@@ -25,9 +25,7 @@ var leafSimilar = function(root1, root2) {
     let leaves1 = []
     let leaves2 = []
     dfs(root1, leaves1);
-    dfs(root2, leaves2)
-    // console.log(leaves1)
-    // console.log(leaves2)
+    dfs(root2, leaves2);
     
     if(leaves1.length !== leaves2.length) return false
     
